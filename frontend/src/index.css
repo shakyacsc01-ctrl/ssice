@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ssice-primary: #0B3D91;
+  --ssice-primary-dark: #051C42;
+  --ssice-secondary: #FF9800;
+  --ssice-success: #4CAF50;
+  --ssice-bg: #F5F7FA;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #111827;
+  background: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 218 86% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 32 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 32 100% 95%;
+    --accent-foreground: 218 86% 20%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 218 86% 30%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
+
+/* Custom utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.glass-dark {
+  background: rgba(5, 28, 66, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 bg-[#0B3D91] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#093175] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200;
+}
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 bg-[#FF9800] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#E68A00] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200;
+}
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 bg-transparent text-[#0B3D91] hover:bg-[#E6ECF5] font-semibold px-5 py-2.5 rounded-lg transition-all duration-200;
+}
+
+.section { @apply py-16 md:py-24; }
+.container-x { @apply mx-auto max-w-7xl px-6 md:px-10 lg:px-12; }
+
+.heading-1 { @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display; }
+.heading-2 { @apply text-3xl sm:text-4xl font-bold tracking-tight font-display; }
+.eyebrow { @apply text-xs font-bold uppercase tracking-[0.25em] text-[#FF9800]; }
+
+.gradient-mesh {
+  background:
+    radial-gradient(at 20% 20%, rgba(11,61,145,0.10), transparent 50%),
+    radial-gradient(at 80% 0%, rgba(255,152,0,0.10), transparent 45%),
+    radial-gradient(at 60% 90%, rgba(76,175,80,0.08), transparent 50%);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.6s ease-out both; }
